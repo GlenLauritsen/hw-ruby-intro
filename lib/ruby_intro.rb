@@ -88,7 +88,18 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  print s + "\n"
+  
+  # Not sure why 0 is included as a multiple of 4...?
+  if s == "0"
+    return true
+  end
+  
+  if /^[0,1]*00$/.match(s) && /^.*1{1,}.*/.match(s)
+    return true
+  end
+  
+  return false
 end
 
 # Part 3
