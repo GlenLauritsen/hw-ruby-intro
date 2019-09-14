@@ -69,7 +69,22 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if(s.length == 0)
+    return false
+  end
+  
+  firstCharacter = s[0]
+  
+  if !/[[:alpha:]]/.match(firstCharacter)
+    return false
+  end
+  
+  case firstCharacter
+  when "a", "A", "e", "E", "i", "I", "o", "O", "u", "U"
+    return false
+  end
+  
+  return true
 end
 
 def binary_multiple_of_4? s
