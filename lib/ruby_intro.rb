@@ -105,5 +105,41 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+def isbn
+  @isbn
+end
+
+def isbn=(isbnString)
+  @isbn = isbnString
+end
+
+def price
+  @price
+end
+
+def price=(cost)
+  @price = cost
+end
+
+def initialize(isbnString, cost)
+  if cost < 0
+    raise ArgumentError.new("Cannot Have Negative Cost")
+  end
+  if cost == 0
+    raise ArgumentError.new("Cannot Have No Cost")
+  end
+  if isbnString == ""
+    raise ArgumentError.new("ISBN Cannot be Undefined")
+  end
+  
+  @price = cost
+  @isbn = isbnString
+end
+
+def price_as_string 
+  return "$%0.2f" % @price
+end
+
+
 end
